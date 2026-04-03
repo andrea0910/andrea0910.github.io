@@ -83,10 +83,13 @@ body{font-family:'Syne',sans-serif;background:var(--white);color:var(--black);ov
 @keyframes fadeup{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 
 /* ── PHOTO STRIP (hero bottom) ── */
-.hero-photo-strip{position:absolute;right:3.5rem;top:50%;transform:translateY(-50%);z-index:2;}
-.hero-photo-frame{width:180px;height:420px;border-radius:3px;overflow:hidden;border:.5px solid rgba(255,255,255,.08);background:var(--dark-mid);position:relative;}
-.hero-photo-frame img{width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;opacity:0;transition:opacity .9s ease;}
+.hero-photo-strip{position:absolute;right:6rem;top:50%;transform:translateY(-50%);z-index:2;}
+.hero-photo-frame{width:200px;height:420px;border-radius:3px;overflow:hidden;border:.5px solid rgba(255,255,255,.08);background:var(--dark-mid);position:relative;cursor:pointer;}
+.hero-photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute;top:0;left:0;opacity:0;transition:opacity .9s ease;}
 .hero-photo-frame img.active{opacity:1;}
+.slider-dots{display:flex;justify-content:center;gap:.45rem;margin-top:.7rem;}
+.slider-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.22);cursor:pointer;transition:background .3s;}
+.slider-dot.active{background:var(--accent);}
 .hero-photo-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;background:var(--dark);}
 .photo-placeholder-label{font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.2);text-align:center;padding:0 .75rem;line-height:1.6;}
 .photo-placeholder-icon{width:28px;height:28px;border:1px solid rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.18);font-size:.8rem;}
@@ -303,10 +306,15 @@ footer{background:var(--black);border-top:.5px solid rgba(255,255,255,.05);paddi
 
   <!-- Hero photo slider -->
   <div class="hero-photo-strip">
-    <div class="hero-photo-frame">
+    <div class="hero-photo-frame" id="heroSliderFrame">
       <img src="images/home1.jpg" alt="Andrea" class="active">
       <img src="images/experience1.jpg" alt="Andrea">
       <img src="images/pot.jpg" alt="Andrea">
+    </div>
+    <div class="slider-dots">
+      <span class="slider-dot active"></span>
+      <span class="slider-dot"></span>
+      <span class="slider-dot"></span>
     </div>
   </div>
 
@@ -575,14 +583,29 @@ footer{background:var(--black);border-top:.5px solid rgba(255,255,255,.05);paddi
 <script>
 // Hero image slider
 (function(){
-  const imgs=document.querySelectorAll('.hero-photo-frame img');
+  const imgs=document.querySelectorAll('#heroSliderFrame img');
+  const dots=document.querySelectorAll('.slider-dot');
   if(imgs.length<2)return;
   let idx=0;
-  setInterval(()=>{
+  function goTo(n){
     imgs[idx].classList.remove('active');
-    idx=(idx+1)%imgs.length;
+    dots[idx].classList.remove('active');
+    idx=n%imgs.length;
     imgs[idx].classList.add('active');
-  },3500);
+    dots[idx].classList.add('active');
+  }
+  let timer=setInterval(()=>goTo(idx+1),3500);
+  document.getElementById('heroSliderFrame').addEventListener('click',()=>{
+    clearInterval(timer);
+    goTo(idx+1);
+    timer=setInterval(()=>goTo(idx+1),3500);
+  });
+  dots.forEach((dot,i)=>dot.addEventListener('click',(e)=>{
+    e.stopPropagation();
+    clearInterval(timer);
+    goTo(i);
+    timer=setInterval(()=>goTo(idx+1),3500);
+  }));
 })();
 
 // Cursor
