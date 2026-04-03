@@ -83,10 +83,10 @@ body{font-family:'Syne',sans-serif;background:var(--white);color:var(--black);ov
 @keyframes fadeup{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 
 /* ── PHOTO STRIP (hero bottom) ── */
-.hero-photo-strip{position:absolute;right:3.5rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.75rem;z-index:2;}
-.hero-photo-frame{width:180px;height:220px;border-radius:3px;overflow:hidden;border:.5px solid rgba(255,255,255,.08);background:var(--dark-mid);position:relative;}
-.hero-photo-frame img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
-.hero-photo-frame:hover img{transform:scale(1.04);}
+.hero-photo-strip{position:absolute;right:3.5rem;top:50%;transform:translateY(-50%);z-index:2;}
+.hero-photo-frame{width:180px;height:420px;border-radius:3px;overflow:hidden;border:.5px solid rgba(255,255,255,.08);background:var(--dark-mid);position:relative;}
+.hero-photo-frame img{width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;opacity:0;transition:opacity .9s ease;}
+.hero-photo-frame img.active{opacity:1;}
 .hero-photo-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;background:var(--dark);}
 .photo-placeholder-label{font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.2);text-align:center;padding:0 .75rem;line-height:1.6;}
 .photo-placeholder-icon{width:28px;height:28px;border:1px solid rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.18);font-size:.8rem;}
@@ -124,6 +124,7 @@ body{font-family:'Syne',sans-serif;background:var(--white);color:var(--black);ov
 .project-plain{font-size:.94rem;font-weight:400;line-height:1.77;color:rgba(250,250,248,.74);margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:.5px solid var(--border-dark);}
 .project-depth{font-size:.81rem;font-weight:300;line-height:1.87;color:rgba(250,250,248,.36);}
 .project-link-row{margin-top:1.5rem;}
+.project-poster{margin-top:1.5rem;}.project-poster img{width:100%;border-radius:3px;border:.5px solid rgba(255,255,255,.1);display:block;}
 .project-link{font-family:'JetBrains Mono',monospace;font-size:.66rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:gap .2s;}
 .project-link:hover{gap:.9rem;}
 .project-link::after{content:'→';}
@@ -300,13 +301,12 @@ footer{background:var(--black);border-top:.5px solid rgba(255,255,255,.05);paddi
   </div>
   <div class="hero-scroll-hint"><div class="hero-scroll-line"></div>Scroll</div>
 
-  <!-- Hero photo strip — replace src with your images -->
+  <!-- Hero photo slider -->
   <div class="hero-photo-strip">
     <div class="hero-photo-frame">
-      <img src="images/home1.jpg" alt="Andrea" onerror="this.parentElement.innerHTML='<div class=\'hero-photo-placeholder\'><div class=\'photo-placeholder-icon\'>+</div><div class=\'photo-placeholder-label\'>Add your photo here<br>images/photo-1.jpg</div></div>'">
-    </div>
-    <div class="hero-photo-frame" style="height:160px;">
-      <img src="images/experience1.jpg" alt="Andrea" onerror="this.parentElement.innerHTML='<div class=\'hero-photo-placeholder\'><div class=\'photo-placeholder-icon\'>+</div><div class=\'photo-placeholder-label\'>Add a candid<br>images/photo-2.jpg</div></div>'">
+      <img src="images/home1.jpg" alt="Andrea" class="active">
+      <img src="images/experience1.jpg" alt="Andrea">
+      <img src="images/pot.jpg" alt="Andrea">
     </div>
   </div>
 
@@ -370,6 +370,9 @@ footer{background:var(--black);border-top:.5px solid rgba(255,255,255,.05);paddi
         <h3 class="project-title">Evaluating User-Style Adaptation for Professional Text Generation</h3>
         <p class="project-plain">AI writing tools often sound like everyone and no one at once. What is the minimum information needed to make a model write like <em>you</em> — and which stylistic details actually matter?</p>
         <div class="project-link-row"><a href="projects/UserAlignReport.pdf" target="_blank" class="project-link">Read paper</a></div>
+        <div class="project-poster reveal">
+          <img src="images/research-poster.jpg" alt="CS 224N research poster — Evaluating User-Style Adaptation for Professional Text Generation">
+        </div>
       </div>
       <div>
         <div class="pm-skills-box">
@@ -427,7 +430,7 @@ footer{background:var(--black);border-top:.5px solid rgba(255,255,255,.05);paddi
       <div><div class="exp-meta-date">Aug – Nov 2025</div><div class="exp-meta-place">Remote</div></div>
       <div>
         <div class="exp-role">Human Data Manager</div><div class="exp-org">micro1</div>
-        <p class="exp-discovery"><strong>Quality at scale is a product problem, not just an ops problem.</strong> Managing 100+ AI trainers forced me to build systems that could hold quality without me being the bottleneck.</p>
+        <p class="exp-discovery">Managing 100+ AI trainers meant building dashboards and QA workflows from scratch. <strong>The lesson was that data quality is a systems problem</strong> — catching errors early required documented standards and feedback loops, not just more oversight.</p>
         <div class="exp-chips"><span class="exp-chip">Distributed teams</span><span class="exp-chip">Quality systems</span><span class="exp-chip">Python</span></div>
       </div>
     </div>
@@ -435,8 +438,8 @@ footer{background:var(--black);border-top:.5px solid rgba(255,255,255,.05);paddi
     <div class="exp-item reveal">
       <div><div class="exp-meta-date">May – Jul 2025</div><div class="exp-meta-place">Remote</div></div>
       <div>
-        <div class="exp-role">U.S. Product Management Intern</div><div class="exp-org">Bucketplace (Ohouse)</div>
-        <p class="exp-discovery"><strong>Localization is a user research problem in disguise.</strong> Adapting a Korean product for U.S. consumers wasn't about translation. It was about understanding what people trust, expect, and need <em>here</em>.</p>
+        <div class="exp-role">US Strategy & Operations Intern</div><div class="exp-org">Bucketplace (Ohouse)</div>
+        <p class="exp-discovery">Running 10+ user interviews and curating 100+ SKUs for a U.S. launch taught me that <strong>what works in one market often doesn't translate literally</strong> — the product descriptions, the search terms, the trust signals all needed rebuilding from the user's perspective.</p>
         <div class="exp-chips"><span class="exp-chip">Go-to-market</span><span class="exp-chip">User research</span><span class="exp-chip">Needfinding</span></div>
       </div>
     </div>
@@ -454,7 +457,7 @@ footer{background:var(--black);border-top:.5px solid rgba(255,255,255,.05);paddi
       <div><div class="exp-meta-date">Jun – Aug 2023</div><div class="exp-meta-place">Seoul, South Korea</div></div>
       <div>
         <div class="exp-role">Strategic Investment Operations Intern</div><div class="exp-org">Hanwha Life</div>
-        <p class="exp-discovery">Benchmarking GenAI products across Asia and North America taught me that <strong>most "new" problems already have analogues somewhere else.</strong> The companies that moved fastest were best at recognizing patterns across contexts and adapting them deliberately.</p>
+        <p class="exp-discovery">Benchmarking 20+ GenAI products across Asia and North America showed me that <strong>what counts as a good product depends entirely on who's using it and where.</strong> Translating those findings into investment recommendations for a South Korean market meant holding two different consumer realities at once.</p>
         <div class="exp-chips"><span class="exp-chip">Competitive intelligence</span><span class="exp-chip">Deal sourcing</span><span class="exp-chip">GenAI landscape</span></div>
       </div>
     </div>
@@ -570,6 +573,18 @@ footer{background:var(--black);border-top:.5px solid rgba(255,255,255,.05);paddi
 </footer>
 
 <script>
+// Hero image slider
+(function(){
+  const imgs=document.querySelectorAll('.hero-photo-frame img');
+  if(imgs.length<2)return;
+  let idx=0;
+  setInterval(()=>{
+    imgs[idx].classList.remove('active');
+    idx=(idx+1)%imgs.length;
+    imgs[idx].classList.add('active');
+  },3500);
+})();
+
 // Cursor
 const dotEl=document.getElementById('cur-dot-el'),ringEl=document.getElementById('cur-ring-el');
 let mx=0,my=0,rx=0,ry=0;
