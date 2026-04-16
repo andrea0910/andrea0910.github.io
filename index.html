@@ -75,12 +75,11 @@ body{font-family:'Syne',sans-serif;background:var(--white);color:var(--black);ov
 .hero-name em{font-style:normal;color:rgba(250,250,248,.4);}
 .hero-story{max-width:500px;font-size:.93rem;font-weight:300;line-height:1.87;color:rgba(250,250,248,.47);margin-bottom:2.5rem;opacity:0;animation:fadeup .9s .5s forwards;}
 .hero-story strong{color:rgba(250,250,248,.82);font-weight:400;}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeup .9s .65s forwards;}
+@keyframes fadeup{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 .btn-accent{padding:.75rem 1.75rem;background:var(--accent);color:var(--accent-text);font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:opacity .2s,transform .2s;}
 .btn-accent:hover{opacity:.85;transform:translateY(-1px);}
 .btn-ghost{padding:.75rem 1.75rem;background:transparent;color:rgba(250,250,248,.45);font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:.5px solid rgba(250,250,248,.14);border-radius:2px;transition:border-color .2s,color .2s;}
 .btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
-@keyframes fadeup{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 
 /* ── PHOTO STRIP (hero bottom) ── */
 .hero-photo-strip{position:absolute;right:9rem;top:50%;transform:translateY(-50%);z-index:2;}
@@ -312,10 +311,6 @@ footer{background:var(--black);border-top:.5px solid rgba(255,255,255,.05);paddi
     <div class="hero-eyebrow">Portfolio · 2026</div>
     <h1 class="hero-name">Andrea<br><em>Nam</em></h1>
     <p class="hero-story">Not a straight line — a series of honest bets. Finance, then technology, then AI, then people. Each role added a piece until the direction got clear.</p>
-    <div class="hero-actions">
-      <a href="#projects" class="btn-accent">See My Work</a>
-      <a href="#connect" class="btn-ghost">Get in Touch</a>
-    </div>
   </div>
 </section>
 
