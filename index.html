@@ -117,7 +117,7 @@ body{font-family:'Syne',sans-serif;background:var(--white);color:var(--black);ov
 #projects .section-heading{color:var(--white);}
 #projects .section-heading em{opacity:.38;}
 .projects-intro{max-width:540px;font-size:.87rem;font-weight:300;line-height:1.87;color:rgba(250,250,248,.38);margin-top:-2.5rem;margin-bottom:3.5rem;}
-.project-card{border-top:.5px solid var(--border-dark);padding:3rem 0;display:grid;grid-template-columns:3fr 2fr;gap:4rem;align-items:start;}
+.project-card{border-top:.5px solid var(--border-dark);padding:3rem 0;}
 .project-card:last-child{border-bottom:.5px solid var(--border-dark);}
 .project-index{font-family:'JetBrains Mono',monospace;font-size:.63rem;font-weight:300;letter-spacing:.18em;color:var(--accent);opacity:.75;margin-bottom:1rem;}
 .project-title{font-family:'Playfair Display',serif;font-size:1.52rem;font-weight:400;color:var(--white);line-height:1.3;margin-bottom:1.2rem;}
@@ -128,13 +128,6 @@ body{font-family:'Syne',sans-serif;background:var(--white);color:var(--black);ov
 .project-link{font-family:'JetBrains Mono',monospace;font-size:.66rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:gap .2s;}
 .project-link:hover{gap:.9rem;}
 .project-link::after{content:'→';}
-.pm-skills-box{background:var(--accent-dimmer);border:.5px solid rgba(232,197,71,.14);border-radius:3px;padding:1.5rem;}
-.pm-skills-label{font-family:'JetBrains Mono',monospace;font-size:.58rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);opacity:.55;margin-bottom:1rem;}
-.pm-skill{display:flex;align-items:flex-start;gap:.6rem;margin-bottom:.82rem;}
-.pm-skill:last-child{margin-bottom:0;}
-.pm-skill-dot{width:4px;height:4px;background:var(--accent);border-radius:50%;margin-top:.44rem;flex-shrink:0;opacity:.55;}
-.pm-skill-text{font-size:.79rem;font-weight:300;line-height:1.62;color:rgba(250,250,248,.52);}
-.pm-skill-text strong{color:rgba(250,250,248,.84);font-weight:400;}
 
 /* ── EXPERIENCE ── */
 #experience{padding:6rem 0;background:var(--white);}
@@ -371,15 +364,6 @@ footer{background:var(--black);border-top:.5px solid rgba(255,255,255,.05);paddi
         <div class="project-poster reveal">
           <img src="images/research-poster.jpg" alt="CS 224N research poster — Evaluating User-Style Adaptation for Professional Text Generation">
         </div>
-      </div>
-      <div>
-        <div class="pm-skills-box">
-          <div class="pm-skills-label">Skills</div>
-          <div class="pm-skill"><div class="pm-skill-dot"></div><div class="pm-skill-text"><strong>User-centered framing</strong> — centered on what users experience, not model benchmarks</div></div>
-          <div class="pm-skill"><div class="pm-skill-dot"></div><div class="pm-skill-text"><strong>Minimum viable signal</strong> — identified the smallest input for maximum personalization quality</div></div>
-          <div class="pm-skill"><div class="pm-skill-dot"></div><div class="pm-skill-text"><strong>Technical depth, plain language</strong> — results legible to non-ML audiences without losing rigor</div></div>
-        </div>
-      </div>
     </div>
 
     <div class="project-card reveal">
@@ -388,15 +372,6 @@ footer{background:var(--black);border-top:.5px solid rgba(255,255,255,.05);paddi
         <h3 class="project-title">Stochastic Routing for Cross-Border Payments</h3>
         <p class="project-plain">International money transfers lose value at every hop; different banks charge different fees, at unpredictable times. This project built a routing model that finds the cheapest path through that uncertainty.</p>
         <div class="project-link-row"><a href="projects/StochasticRoutingProject.pdf" target="_blank" class="project-link">Read paper</a></div>
-      </div>
-      <div>
-        <div class="pm-skills-box">
-          <div class="pm-skills-label">Skills</div>
-          <div class="pm-skill"><div class="pm-skill-dot"></div><div class="pm-skill-text"><strong>Structured ambiguity</strong> — modeled a problem with no single right answer and made it testable</div></div>
-          <div class="pm-skill"><div class="pm-skill-dot"></div><div class="pm-skill-text"><strong>Systems thinking</strong> — designed for multi-node complexity, not just point-to-point optimization</div></div>
-          <div class="pm-skill"><div class="pm-skill-dot"></div><div class="pm-skill-text"><strong>Tradeoff reasoning</strong> — speed vs. cost vs. reliability, quantified and compared</div></div>
-        </div>
-      </div>
     </div>
 
     <div class="project-card reveal">
@@ -405,15 +380,6 @@ footer{background:var(--black);border-top:.5px solid rgba(255,255,255,.05);paddi
         <h3 class="project-title">Data-Driven Approaches for Incentivizing Sales Performance</h3>
         <p class="project-plain">Insurance sales have been declining. This project asked why, then built a simulation to design incentive structures that actually change behavior, not just measure it.</p>
         <div class="project-link-row"><a href="projects/SeniorReport.pdf" target="_blank" class="project-link">Read paper</a></div>
-      </div>
-      <div>
-        <div class="pm-skills-box">
-          <div class="pm-skills-label">Skills</div>
-          <div class="pm-skill"><div class="pm-skill-dot"></div><div class="pm-skill-text"><strong>Behavioral modeling</strong> — incentive design is user behavior design at a systems level</div></div>
-          <div class="pm-skill"><div class="pm-skill-dot"></div><div class="pm-skill-text"><strong>Decision support tools</strong> — built something that lets stakeholders test assumptions before committing</div></div>
-          <div class="pm-skill"><div class="pm-skill-dot"></div><div class="pm-skill-text"><strong>Root cause thinking</strong> — traced surface symptoms to structural causes</div></div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
