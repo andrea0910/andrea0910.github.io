@@ -161,7 +161,7 @@ body{font-family:'Syne',sans-serif;background:var(--white);color:var(--black);ov
 
 /* ── PERSONAL ── */
 #personal{padding:6rem 0;background:var(--off-white);}
-.personal-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+#personal .section-inner{max-width:720px;}
 .personal-lead{font-family:'Playfair Display',serif;font-size:1.28rem;font-weight:400;line-height:1.67;color:var(--black);margin-bottom:1.7rem;}
 .personal-body p{font-size:.87rem;font-weight:300;line-height:1.92;color:#555;margin-bottom:1rem;}
 .interests-list{margin-top:2rem;}
@@ -182,7 +182,7 @@ body{font-family:'Syne',sans-serif;background:var(--white);color:var(--black);ov
 .photo-caption{position:absolute;bottom:0;left:0;right:0;padding:.5rem .65rem;background:linear-gradient(transparent,rgba(14,14,14,.55));font-family:'JetBrains Mono',monospace;font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);opacity:0;transition:opacity .25s;}
 .photo-frame:hover .photo-caption{opacity:1;}
 
-.origin-block{background:var(--dark);border-radius:3px;padding:2.5rem;}
+.origin-block{background:var(--dark);border-radius:3px;padding:2.75rem 2.5rem;margin-top:3.5rem;}
 .origin-flag-row{display:flex;gap:.5rem;margin-bottom:1.5rem;align-items:center;}
 .flag-bubble{width:2rem;height:2rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;background:var(--dark-mid);}
 .origin-arrow{color:var(--accent);font-size:.8rem;margin:0 .25rem;}
@@ -248,7 +248,7 @@ footer{background:var(--black);border-top:.5px solid rgba(255,255,255,.05);paddi
   .hero-scroll-hint{display:none;}
   .hero-photo-strip{display:none;}
   .section-inner{padding:0 1.25rem;}
-  .about-grid,.personal-grid,.connect-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .about-grid,.connect-grid{grid-template-columns:1fr;gap:2.5rem;}
   .timeline::before{left:3.5rem;}
   .tl-item{grid-template-columns:3.25rem .75rem 1fr;gap:0 1rem;}
   .tl-date{font-size:.52rem;}
@@ -446,6 +446,17 @@ footer{background:var(--black);border-top:.5px solid rgba(255,255,255,.05);paddi
       </div>
 
     </div>
+
+    <div class="origin-block reveal rd1">
+      <div class="origin-flag-row">
+        <div class="flag-bubble">🇵🇾</div>
+        <div class="origin-arrow">→</div>
+        <div class="flag-bubble">🇺🇸</div>
+      </div>
+      <p class="origin-quote">Growing up, lunch was Paraguayan — freshly squeezed orange juice, salad, whatever was in season. Dinner was Korean. Breakfast depended on the morning: rice with fried eggs, kimbab, steamed dumplings, or some days French toast and cereal. That was home. My home.</p>
+      <p class="origin-body">Outside, Ciudad del Este had its own texture. Customers speaking Portuguese, sellers answering in Portuguese with a Spanish accent, Korean and Chinese restaurants a few blocks apart. I grew up speaking Korean at home and Spanish everywhere else — Portuguese was inevitable on that border. A border city sounds exotic from a distance. Growing up there, it just sounded like Tuesday.</p>
+      <p class="origin-body">College gave me the distance to see what I'd actually absorbed — and what I'd chosen. Not everything from each place. From Paraguay, how to be in a community. From Korea, diligence and a quiet ambition. I didn't blend three cultures. I picked from three of them.</p>
+    </div>
   </div>
 </section>
 
@@ -533,37 +544,19 @@ footer{background:var(--black);border-top:.5px solid rgba(255,255,255,.05);paddi
 <!-- ═══ PERSONAL ═══ -->
 <section id="personal">
   <div class="section-inner">
-    <div class="personal-grid">
-      <div>
-        <div class="section-kicker reveal">Personal</div>
-        <h2 class="section-heading reveal">Beyond the work</h2>
-        <p class="personal-lead reveal">"Balance isn't something I stumble into. It's something I protect."</p>
-        <div class="personal-body">
-          <p class="reveal">Golf, piano, cooking Korean and Paraguayan food when I'm homesick for two places at once. I hunt for desserts in every city I visit, which is really just user research with better outcomes.</p>
-        </div>
-        <div class="interests-list reveal rd2">
-          <div class="interest-row">Golf <span>patience</span></div>
-          <div class="interest-row">Piano <span>iteration</span></div>
-          <div class="interest-row">Cooking — Korean &amp; Paraguayan <span>comfort</span></div>
-          <div class="interest-row">Dessert hunting <span>every city</span></div>
-          <div class="interest-row">Long walks <span>thinking</span></div>
-          <div class="interest-row">Jump rope <span>new</span></div>
-        </div>
-
-      </div>
-
-      <div>
-        <div class="origin-block reveal rd1">
-          <div class="origin-flag-row">
-            <div class="flag-bubble">🇵🇾</div>
-            <div class="origin-arrow">→</div>
-            <div class="flag-bubble">🇺🇸</div>
-          </div>
-          <p class="origin-quote">Growing up, lunch was Paraguayan — freshly squeezed orange juice, salad, whatever was in season. Dinner was Korean. Breakfast depended on the morning: rice with fried eggs, kimbab, steamed dumplings, or some days French toast and cereal. That was home. My home.</p>
-          <p class="origin-body">Outside, Ciudad del Este had its own texture. Customers speaking Portuguese, sellers answering in Portuguese with a Spanish accent, Korean and Chinese restaurants a few blocks apart. I grew up speaking Korean at home and Spanish everywhere else — Portuguese was inevitable on that border. A border city sounds exotic from a distance. Growing up there, it just sounded like Tuesday.</p>
-          <p class="origin-body">College gave me the distance to see what I'd actually absorbed — and what I'd chosen. Not everything from each place. From Paraguay, how to be in a community. From Korea, diligence and a quiet ambition. I didn't blend three cultures. I picked from three of them.</p>
-        </div>
-      </div>
+    <div class="section-kicker reveal">Personal</div>
+    <h2 class="section-heading reveal">Beyond the work</h2>
+    <p class="personal-lead reveal">"Balance isn't something I stumble into. It's something I protect."</p>
+    <div class="personal-body">
+      <p class="reveal">Golf, piano, cooking Korean and Paraguayan food when I'm homesick for two places at once. I hunt for desserts in every city I visit, which is really just user research with better outcomes.</p>
+    </div>
+    <div class="interests-list reveal rd2">
+      <div class="interest-row">Golf <span>patience</span></div>
+      <div class="interest-row">Piano <span>iteration</span></div>
+      <div class="interest-row">Cooking — Korean &amp; Paraguayan <span>comfort</span></div>
+      <div class="interest-row">Dessert hunting <span>every city</span></div>
+      <div class="interest-row">Long walks <span>thinking</span></div>
+      <div class="interest-row">Jump rope <span>new</span></div>
     </div>
   </div>
 </section>
