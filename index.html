@@ -101,8 +101,7 @@ body{font-family:'Syne',sans-serif;background:var(--white);color:var(--black);ov
 
 /* ── ABOUT ── */
 #about{padding:7rem 0 6rem;background:var(--white);}
-.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:6rem;align-items:start;margin-bottom:4rem;}
-.about-lead{font-family:'Playfair Display',serif;font-size:1.38rem;font-weight:400;line-height:1.62;color:var(--black);margin-bottom:0;}
+.about-edu-row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-bottom:3.5rem;}
 
 /* ── TIMELINE ── */
 .timeline{position:relative;padding-left:0;}
@@ -256,7 +255,8 @@ footer{background:var(--black);border-top:.5px solid rgba(255,255,255,.05);paddi
   .hero-scroll-hint{display:none;}
   .hero-photo-strip{display:none;}
   .section-inner{padding:0 1.25rem;}
-  .about-grid,.connect-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .about-edu-row{grid-template-columns:1fr;}
+  .connect-grid{grid-template-columns:1fr;gap:2.5rem;}
   .timeline::before{left:3.5rem;}
   .tl-item{grid-template-columns:3.25rem .75rem 1fr;gap:0 1rem;}
   .tl-date{font-size:.52rem;}
@@ -347,22 +347,17 @@ footer{background:var(--black);border-top:.5px solid rgba(255,255,255,.05);paddi
 <!-- ═══ ABOUT ═══ -->
 <section id="about">
   <div class="section-inner">
-    <div class="about-grid">
-      <div>
-        <div class="section-kicker reveal">About</div>
-        <p class="about-lead reveal">I didn't plan my way to product. I followed what interested me until the path made sense.</p>
+    <div class="section-kicker reveal">About</div>
+    <div class="about-edu-row">
+      <div class="aside-block reveal rd1">
+        <div class="aside-block-label">Education</div>
+        <div class="aside-degree">MS, Computer Science</div>
+        <div class="aside-sub">Stanford University · AI Specialization · 2025–26</div>
       </div>
-      <div>
-        <div class="aside-block reveal rd1">
-          <div class="aside-block-label">Education</div>
-          <div class="aside-degree">MS, Computer Science</div>
-          <div class="aside-sub">Stanford University · AI Specialization · 2025–26</div>
-        </div>
-        <div class="aside-block reveal rd2">
-          <div class="aside-block-label">Education</div>
-          <div class="aside-degree">BS, Management Science &amp; Engineering</div>
-          <div class="aside-sub">Stanford University · Decision Analysis &amp; Systems · 2021–25</div>
-        </div>
+      <div class="aside-block reveal rd2">
+        <div class="aside-block-label">Education</div>
+        <div class="aside-degree">BS, Management Science &amp; Engineering</div>
+        <div class="aside-sub">Stanford University · Decision Analysis &amp; Systems · 2021–25</div>
       </div>
     </div>
 
@@ -432,19 +427,19 @@ footer{background:var(--black);border-top:.5px solid rgba(255,255,255,.05);paddi
       <div class="tl-item">
         <div class="tl-date">Feb<br>2025</div>
         <div class="tl-node"><div class="tl-dot"></div></div>
-        <div class="tl-text">Admitted to the Stanford CS Coterm, MS in Computer Science (AI).</div>
+        <div class="tl-text">Admitted to the Stanford CS Coterm — MS in Computer Science, AI Specialization.</div>
       </div>
 
       <div class="tl-item">
         <div class="tl-date">Jun<br>2025</div>
         <div class="tl-node"><div class="tl-dot"></div></div>
-        <div class="tl-text">Graduated with a BS in Management Science &amp; Engineering.</div>
+        <div class="tl-text">Graduated with a BS in Management Science &amp; Engineering, Decision Analysis &amp; Systems.</div>
       </div>
 
       <div class="tl-item">
         <div class="tl-date">Jun<br>2026</div>
         <div class="tl-node"><div class="tl-dot"></div></div>
-        <div class="tl-text">Expected: MS in Computer Science.</div>
+        <div class="tl-text">Expected: MS in Computer Science, AI Specialization.</div>
       </div>
 
       <div class="tl-item tl-next">
