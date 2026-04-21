@@ -190,6 +190,14 @@ body{font-family:'Syne',sans-serif;background:var(--white);color:var(--black);ov
 .origin-body{font-size:.84rem;font-weight:300;line-height:1.87;color:rgba(250,250,248,.62);margin-bottom:1rem;}
 .origin-body:last-child{margin-bottom:0;}
 
+/* ── ORIGIN ESSAY LINK ── */
+.origin-essay-link{font-family:'JetBrains Mono',monospace;font-size:.64rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;opacity:.75;transition:opacity .2s,gap .2s;}
+.origin-essay-link:hover{opacity:1;gap:.7rem;}
+
+/* ── ESSAY COMING SOON ── */
+.essay-item--coming{opacity:.45;pointer-events:none;}
+.essay-soon{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--subtle);}
+
 /* ── ABOUT PHOTO ── */
 .about-photo-break{margin:2.5rem 0;display:grid;grid-template-columns:1fr 1fr;gap:.6rem;}
 .about-photo-frame{border-radius:3px;overflow:hidden;border:.5px solid var(--border-mid);background:var(--off-white);aspect-ratio:4/3;position:relative;}
@@ -454,8 +462,7 @@ footer{background:var(--black);border-top:.5px solid rgba(255,255,255,.05);paddi
         <div class="flag-bubble">🇺🇸</div>
       </div>
       <p class="origin-quote">Growing up, lunch was Paraguayan — freshly squeezed orange juice, salad, whatever was in season. Dinner was Korean. Breakfast depended on the morning: rice with fried eggs, kimbab, steamed dumplings, or some days French toast and cereal. That was home. My home.</p>
-      <p class="origin-body">Outside, Ciudad del Este had its own texture. Customers speaking Portuguese, sellers answering in Portuguese with a Spanish accent, Korean and Chinese restaurants a few blocks apart. I grew up speaking Korean at home and Spanish everywhere else — Portuguese was inevitable on that border. A border city sounds exotic from a distance. Growing up there, it just sounded like Tuesday.</p>
-      <p class="origin-body">College gave me the distance to see what I'd actually absorbed — and what I'd chosen. Not everything from each place. From Paraguay, how to be in a community. From Korea, diligence and a quiet ambition. I didn't blend three cultures. I picked from three of them.</p>
+      <a href="#essays" class="origin-essay-link">Read the full essay →</a>
     </div>
   </div>
 </section>
@@ -582,9 +589,14 @@ footer{background:var(--black);border-top:.5px solid rgba(255,255,255,.05);paddi
       </a>
       -->
 
-      <!-- Placeholder shown until essays are added -->
-      <div class="essay-coming reveal">
-        <div class="essay-coming-text">Essays coming soon</div>
+      <!-- First essay — swap href and remove coming styles once published -->
+      <div class="essay-item essay-item--coming reveal">
+        <span class="essay-num">01</span>
+        <div class="essay-body">
+          <div class="essay-title">Lunch Was Paraguayan, Dinner Was Korean</div>
+          <div class="essay-summary">A border city sounds exotic from a distance. Growing up there, it just sounded like Tuesday.</div>
+        </div>
+        <span class="essay-soon">soon</span>
       </div>
 
     </div>
