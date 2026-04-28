@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Andrea Nam</title>
+<title>Connect — Andrea Nam</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Syne:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -49,68 +49,40 @@
   </ul>
 </nav>
 
-<!-- ═══ HERO ═══ -->
-<section id="hero">
-  <div class="hero-bg-grid"></div>
-  <div class="hero-meta">
-    <div class="hero-meta-line">Stanford University &nbsp;/&nbsp; <span>MS CS · AI</span></div>
-    <div class="hero-meta-line">Management Science &amp; Engineering &nbsp;/&nbsp; <span>BS</span></div>
-    <div class="hero-meta-line">Ciudad del Este, PY → Stanford, CA</div>
-  </div>
-
-  <!-- Hero photo slider -->
-  <div class="hero-photo-strip">
-    <div class="hero-photo-frame" id="heroSliderFrame">
-      <img src="images/profile.jpg" alt="Andrea" class="active" style="object-position:80% center;">
-      <img src="images/experience1.jpg" alt="Andrea">
-      <img src="images/pot.jpg" alt="Andrea">
+<!-- ═══ CONNECT ═══ -->
+<section id="connect">
+  <div class="section-inner">
+    <div class="connect-grid">
+      <div>
+        <div class="section-kicker reveal" style="color:rgba(232,197,71,.65);">Connect</div>
+        <h2 class="section-heading reveal" style="color:var(--white);">Let's talk</h2>
+        <div class="connect-btns reveal">
+          <a href="mailto:anamsong@stanford.edu" class="btn-accent">Send an Email</a>
+          <a href="https://www.linkedin.com/in/andrea-nam-5862791b8/" target="_blank" class="btn-ghost">LinkedIn</a>
+        </div>
+      </div>
+      <div>
+        <ul style="list-style:none;" class="reveal rd1">
+          <li class="contact-item"><span class="contact-label">Stanford Email</span><a href="mailto:anamsong@stanford.edu" class="contact-value">anamsong@stanford.edu</a></li>
+          <li class="contact-item"><span class="contact-label">Personal Email</span><a href="mailto:andreajiwoo@gmail.com" class="contact-value">andreajiwoo@gmail.com</a></li>
+          <li class="contact-item"><span class="contact-label">LinkedIn</span><a href="https://www.linkedin.com/in/andrea-nam-5862791b8/" target="_blank" class="contact-value">andrea-nam-5862791b8</a></li>
+          <li class="contact-item"><span class="contact-label">Instagram</span><a href="https://www.instagram.com/andreanam1009" target="_blank" class="contact-value">@andreanam1009</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="slider-dots">
-      <span class="slider-dot active"></span>
-      <span class="slider-dot"></span>
-      <span class="slider-dot"></span>
-    </div>
-  </div>
-
-  <div class="hero-content">
-    <h1 class="hero-name">Andrea<br><em>Nam</em></h1>
-    <p class="hero-story">Hi, I'm Andrea. Born and raised in Paraguay, to Korean parents, on the border of Brazil and Argentina. I think in scenarios before I think in plans. Three tries to get to Stanford — I got here. Korean, Latin American, Bay Area — three cultural lenses running at once.</p>
   </div>
 </section>
 
 <footer>
   <span class="footer-copy">© 2026 Andrea Nam</span>
   <div class="footer-links">
-    <a href="about.html">About</a>
+    <a href="index.html">Home</a>
     <a href="projects.html">Projects</a>
     <a href="experience.html">Experience</a>
-    <a href="connect.html">Connect</a>
+    <a href="about.html">About</a>
   </div>
 </footer>
 
-<script>
-// Hero image slider
-(function(){
-  const imgs=document.querySelectorAll('#heroSliderFrame img');
-  const dots=document.querySelectorAll('.slider-dot');
-  if(imgs.length<2)return;
-  let idx=0;
-  function goTo(n){
-    imgs[idx].classList.remove('active');
-    dots[idx].classList.remove('active');
-    idx=n%imgs.length;
-    imgs[idx].classList.add('active');
-    dots[idx].classList.add('active');
-  }
-  let timer=setInterval(()=>goTo(idx+1),3500);
-  document.getElementById('heroSliderFrame').addEventListener('click',()=>{
-    clearInterval(timer);goTo(idx+1);timer=setInterval(()=>goTo(idx+1),3500);
-  });
-  dots.forEach((dot,i)=>dot.addEventListener('click',(e)=>{
-    e.stopPropagation();clearInterval(timer);goTo(i);timer=setInterval(()=>goTo(idx+1),3500);
-  }));
-})();
-</script>
 <script src="script.js"></script>
 </body>
 </html>

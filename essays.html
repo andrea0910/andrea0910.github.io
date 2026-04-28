@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Andrea Nam</title>
+<title>Essays — Andrea Nam</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Syne:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page-light">
 
 <div class="cur" id="cur-dot-el"><div class="cur-dot"></div></div>
 <div class="cur" id="cur-ring-el"><div class="cur-ring"></div></div>
@@ -49,68 +49,51 @@
   </ul>
 </nav>
 
-<!-- ═══ HERO ═══ -->
-<section id="hero">
-  <div class="hero-bg-grid"></div>
-  <div class="hero-meta">
-    <div class="hero-meta-line">Stanford University &nbsp;/&nbsp; <span>MS CS · AI</span></div>
-    <div class="hero-meta-line">Management Science &amp; Engineering &nbsp;/&nbsp; <span>BS</span></div>
-    <div class="hero-meta-line">Ciudad del Este, PY → Stanford, CA</div>
-  </div>
+<!-- ═══ ESSAYS ═══ -->
+<section id="essays">
+  <div class="section-inner">
+    <div class="section-kicker reveal">Essays</div>
+    <h2 class="section-heading reveal">Things I've<br><em>thought through</em></h2>
+    <p class="essays-intro reveal">Writing has helped me figure out what I actually think. These are essays, observations, and stories: some personal, some professional, all honest.</p>
 
-  <!-- Hero photo slider -->
-  <div class="hero-photo-strip">
-    <div class="hero-photo-frame" id="heroSliderFrame">
-      <img src="images/profile.jpg" alt="Andrea" class="active" style="object-position:80% center;">
-      <img src="images/experience1.jpg" alt="Andrea">
-      <img src="images/pot.jpg" alt="Andrea">
-    </div>
-    <div class="slider-dots">
-      <span class="slider-dot active"></span>
-      <span class="slider-dot"></span>
-      <span class="slider-dot"></span>
-    </div>
-  </div>
+    <div class="essay-list">
 
-  <div class="hero-content">
-    <h1 class="hero-name">Andrea<br><em>Nam</em></h1>
-    <p class="hero-story">Hi, I'm Andrea. Born and raised in Paraguay, to Korean parents, on the border of Brazil and Argentina. I think in scenarios before I think in plans. Three tries to get to Stanford — I got here. Korean, Latin American, Bay Area — three cultural lenses running at once.</p>
+      <!-- Add essays here. Copy one block per essay -->
+      <!-- Example structure:
+      <a href="YOUR_LINK_HERE" target="_blank" class="essay-item reveal">
+        <span class="essay-num">01</span>
+        <div class="essay-body">
+          <div class="essay-title">Your Essay Title Goes Here</div>
+          <div class="essay-summary">One sentence that earns the click.</div>
+        </div>
+        <span class="essay-arrow">→</span>
+      </a>
+      -->
+
+      <!-- First essay — swap href and remove coming styles once published -->
+      <div class="essay-item essay-item--coming reveal">
+        <span class="essay-num">01</span>
+        <div class="essay-body">
+          <div class="essay-title">Lunch Was Paraguayan, Dinner Was Korean</div>
+          <div class="essay-summary">A border city sounds exotic from a distance. Growing up there, it just sounded like Tuesday.</div>
+        </div>
+        <span class="essay-soon">soon</span>
+      </div>
+
+    </div>
   </div>
 </section>
 
 <footer>
   <span class="footer-copy">© 2026 Andrea Nam</span>
   <div class="footer-links">
-    <a href="about.html">About</a>
+    <a href="index.html">Home</a>
     <a href="projects.html">Projects</a>
-    <a href="experience.html">Experience</a>
+    <a href="about.html">About</a>
     <a href="connect.html">Connect</a>
   </div>
 </footer>
 
-<script>
-// Hero image slider
-(function(){
-  const imgs=document.querySelectorAll('#heroSliderFrame img');
-  const dots=document.querySelectorAll('.slider-dot');
-  if(imgs.length<2)return;
-  let idx=0;
-  function goTo(n){
-    imgs[idx].classList.remove('active');
-    dots[idx].classList.remove('active');
-    idx=n%imgs.length;
-    imgs[idx].classList.add('active');
-    dots[idx].classList.add('active');
-  }
-  let timer=setInterval(()=>goTo(idx+1),3500);
-  document.getElementById('heroSliderFrame').addEventListener('click',()=>{
-    clearInterval(timer);goTo(idx+1);timer=setInterval(()=>goTo(idx+1),3500);
-  });
-  dots.forEach((dot,i)=>dot.addEventListener('click',(e)=>{
-    e.stopPropagation();clearInterval(timer);goTo(i);timer=setInterval(()=>goTo(idx+1),3500);
-  }));
-})();
-</script>
 <script src="script.js"></script>
 </body>
 </html>
