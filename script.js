@@ -38,27 +38,64 @@
     });
   }
 
-  // ── NAV ACTIVE STATE ──
-  const pageOrder = ['index.html', 'about.html', 'projects.html', 'experience.html', 'personal.html', 'essays.html', 'connect.html'];
+  // ── NAV ──
   const filename = window.location.pathname.split('/').pop() || 'index.html';
-  const currentIdx = pageOrder.indexOf(filename) >= 0 ? pageOrder.indexOf(filename) : 0;
+  const isIndexPage = filename === 'index.html' || filename === '';
 
   const sideNav = document.getElementById('side-nav');
   const bottomNav = document.getElementById('bottom-nav');
+  const sideDots = sideNav ? Array.from(sideNav.querySelectorAll('.snav-dot')) : [];
+  const btmItems = bottomNav ? Array.from(bottomNav.querySelectorAll('.bnav-item')) : [];
 
-  if (sideNav) {
-    sideNav.querySelectorAll('.snav-dot').forEach((dot, i) => {
-      if (i === currentIdx) dot.classList.add('active');
-      if (isLightPage) dot.classList.add('light');
-      dot.addEventListener('click', () => { window.location.href = dot.dataset.href; });
+  function setActive(idx, lightDots) {
+    sideDots.forEach((d, i) => {
+      d.classList.toggle('active', i === idx);
+      d.classList.toggle('light', !!lightDots);
     });
+    btmItems.forEach((d, i) => d.classList.toggle('active', i === idx));
   }
 
-  if (bottomNav) {
-    bottomNav.querySelectorAll('.bnav-item').forEach((item, i) => {
-      if (i === currentIdx) item.classList.add('active');
-      item.addEventListener('click', () => { window.location.href = item.dataset.href; });
-    });
+  // Same-page anchors scroll smoothly; cross-page hrefs navigate
+  function navClick(href) {
+    const hashIdx = href.indexOf('#');
+    const page = hashIdx >= 0 ? href.slice(0, hashIdx) : href;
+    const anchor = hashIdx >= 0 ? href.slice(hashIdx + 1) : null;
+    const targetPage = page || 'index.html';
+    const currentPage = filename || 'index.html';
+    if (targetPage === currentPage) {
+      if (anchor) {
+        const target = document.getElementById(anchor);
+        if (target) { target.scrollIntoView({ behavior: 'smooth' }); return; }
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+    }
+    window.location.href = href;
+  }
+
+  sideDots.forEach(dot => dot.addEventListener('click', () => navClick(dot.dataset.href)));
+  btmItems.forEach(item => item.addEventListener('click', () => navClick(item.dataset.href)));
+
+  // ── INDEX PAGE: scroll-based active state for hero + about ──
+  if (isIndexPage) {
+    const heroEl = document.getElementById('hero');
+    const aboutEl = document.getElementById('about');
+
+    const navObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        if (e.target.id === 'hero') setActive(0, false);
+        else if (e.target.id === 'about') setActive(1, true);
+      });
+    }, { threshold: 0.4 });
+
+    if (heroEl) navObs.observe(heroEl);
+    if (aboutEl) navObs.observe(aboutEl);
+  } else {
+    // Page-based: match dot whose data-href equals the current filename
+    const idx = sideDots.findIndex(d => d.dataset.href === filename);
+    setActive(idx, isLightPage);
   }
 
   // ── REVEAL ──
