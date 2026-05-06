@@ -211,14 +211,11 @@ body{font-family:'Syne',sans-serif;background:var(--white);color:var(--black);ov
 /* ── CONNECT ── */
 #connect{padding:6rem 0 5rem;background:var(--black);min-height:100vh;}
 #connect .section-heading{color:var(--white);}
-.connect-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:6rem;align-items:start;}
-.connect-sub{font-size:.88rem;font-weight:300;line-height:1.87;color:rgba(250,250,248,.36);margin-top:-2.5rem;margin-bottom:2.5rem;max-width:430px;}
-.connect-btns{display:flex;gap:.75rem;flex-wrap:wrap;}
-.contact-item{padding:1.05rem 0;border-bottom:.5px solid rgba(255,255,255,.06);display:flex;flex-direction:column;gap:.28rem;}
-.contact-item:first-child{border-top:.5px solid rgba(255,255,255,.06);}
-.contact-label{font-family:'JetBrains Mono',monospace;font-size:.57rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,250,248,.23);}
-.contact-value{font-size:.87rem;font-weight:300;color:rgba(250,250,248,.62);text-decoration:none;transition:color .2s;}
-.contact-value:hover{color:var(--accent);}
+.connect-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem;}
+.connect-card{display:flex;flex-direction:column;gap:.5rem;padding:1.6rem 1.5rem;border:.5px solid rgba(250,250,248,.1);border-radius:3px;text-decoration:none;transition:border-color .2s,background .2s;}
+.connect-card:hover{border-color:var(--accent);background:rgba(232,197,71,.04);}
+.connect-card-label{font-family:'JetBrains Mono',monospace;font-size:.57rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,250,248,.28);}
+.connect-card-value{font-size:.87rem;font-weight:300;color:rgba(250,250,248,.7);}
 
 /* ── FOOTER ── */
 footer{background:var(--black);border-top:.5px solid rgba(255,255,255,.05);padding:1.5rem 3.5rem;display:flex;align-items:center;justify-content:space-between;}
@@ -241,7 +238,7 @@ footer{background:var(--black);border-top:.5px solid rgba(255,255,255,.05);paddi
   .hero-photo-strip{display:none;}
   .section-inner{padding:0 1.25rem;}
   .about-edu-row{grid-template-columns:1fr;}
-  .connect-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .connect-cards{grid-template-columns:1fr 1fr;}
   .timeline::before{left:3.5rem;}
   .tl-item{grid-template-columns:3.25rem .75rem 1fr;gap:0 1rem;}
   .tl-date{font-size:.52rem;}
