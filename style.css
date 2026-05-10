@@ -119,6 +119,7 @@ body{font-family:'Syne',sans-serif;background:var(--white);color:var(--black);ov
 #projects{padding:6rem 0;background:var(--near-black);min-height:100vh;}
 #projects .section-heading{color:var(--white);}
 #projects .section-heading em{opacity:.38;}
+.projects-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;}
 .project-card{border-top:.5px solid var(--border-dark);padding:3rem 0;}
 .project-card:last-child{border-bottom:.5px solid var(--border-dark);}
 .project-index{font-family:'JetBrains Mono',monospace;font-size:.63rem;font-weight:300;letter-spacing:.18em;color:var(--accent);opacity:.75;margin-bottom:1rem;}
@@ -132,6 +133,8 @@ body{font-family:'Syne',sans-serif;background:var(--white);color:var(--black);ov
 .project-link{font-family:'JetBrains Mono',monospace;font-size:.66rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:gap .2s;}
 .project-link:hover{gap:.9rem;}
 .project-link::after{content:'→';}
+.project-github-link{font-family:'JetBrains Mono',monospace;font-size:.63rem;font-weight:300;letter-spacing:.12em;color:var(--accent);text-decoration:none;transition:opacity .2s;}
+.project-github-link:hover{opacity:.7;}
 
 /* ── EXPERIENCE ── */
 #experience{padding:6rem 0;background:var(--white);min-height:100vh;}
