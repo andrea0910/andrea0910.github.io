@@ -133,8 +133,8 @@ body{font-family:'Syne',sans-serif;background:var(--white);color:var(--black);ov
 .project-link{font-family:'JetBrains Mono',monospace;font-size:.66rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:gap .2s;}
 .project-link:hover{gap:.9rem;}
 .project-link::after{content:'→';}
-.project-github-link{font-family:'JetBrains Mono',monospace;font-size:.63rem;font-weight:300;letter-spacing:.12em;color:var(--accent);text-decoration:none;transition:opacity .2s;}
-.project-github-link:hover{opacity:.7;}
+.project-github-link{font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);text-decoration:none;padding:.55rem 1.1rem;border:1px solid rgba(232,197,71,.5);border-radius:3px;background:rgba(232,197,71,.05);transition:background .2s,border-color .2s;}
+.project-github-link:hover{background:rgba(232,197,71,.18);border-color:var(--accent);}
 
 /* ── EXPERIENCE ── */
 #experience{padding:6rem 0;background:var(--white);min-height:100vh;}
@@ -215,6 +215,9 @@ body{font-family:'Syne',sans-serif;background:var(--white);color:var(--black);ov
 #connect{padding:6rem 0 5rem;background:var(--black);min-height:100vh;}
 #connect .section-heading{color:var(--white);}
 .connect-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem;}
+.projects-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;}
+.project-github-link{font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);text-decoration:none;padding:.55rem 1.1rem;border:1px solid rgba(232,197,71,.5);border-radius:3px;background:rgba(232,197,71,.05);transition:background .2s,border-color .2s;}
+.project-github-link:hover{background:rgba(232,197,71,.18);border-color:var(--accent);}
 a.connect-card{display:flex;flex-direction:column;gap:.55rem;padding:1.75rem 1.6rem;border:1px solid rgba(232,197,71,.35);border-radius:3px;text-decoration:none;cursor:pointer;background:rgba(232,197,71,.04);transition:border-color .25s,background .25s;}
 a.connect-card:hover{border-color:var(--accent);background:rgba(232,197,71,.12);}
 a.connect-card .connect-card-label{font-family:'JetBrains Mono',monospace;font-size:.65rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:rgba(232,197,71,.85);}
